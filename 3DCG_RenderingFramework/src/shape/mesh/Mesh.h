@@ -21,12 +21,6 @@ public:
 
 private:
 	void readFile(const std::string & filename);
-        
-    Vector transformHitNormal(const Vector & hitNormal) {
-        Vector t =getTransfo().getInvMat().getTranspose() * hitNormal;
-        t.normalize();
-        return t;
-    }
 };
 
 #endif /* MESH_H_ */
