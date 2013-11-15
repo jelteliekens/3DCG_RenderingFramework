@@ -24,14 +24,6 @@ public:
     
     void setTransfo(const Transfo & transfo) { this->transfo = transfo; }
     
-protected:
-    
-        Vector transformHitNormal(const Vector & hitNormal) {
-        Vector t =getTransfo().getInvMat().getTranspose() * hitNormal;
-        t.normalize();
-        return t;
-    }
-    
 };
 
 #endif /* SHAPE_H_ */

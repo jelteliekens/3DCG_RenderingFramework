@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E5423D32-BA43-42E8-82D8-3826F500E12F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>3DCG_RenderingFramework</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DC39E81C-DB4D-40E5-AC5F-163E9B48CCA3</key>
+		<string>https://github.com/jelteliekens/3DCG_RenderingFramework.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>3DCG_RenderingFramework.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DC39E81C-DB4D-40E5-AC5F-163E9B48CCA3</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jelteliekens/3DCG_RenderingFramework.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DC39E81C-DB4D-40E5-AC5F-163E9B48CCA3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC39E81C-DB4D-40E5-AC5F-163E9B48CCA3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>3DCG_RenderingFramework</string>
+		</dict>
+	</array>
+</dict>
+</plist>

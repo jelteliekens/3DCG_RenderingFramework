@@ -18,7 +18,7 @@ HitInfo Sphere::intersection(const Ray & ray) {
 
         
 		double t = -b / (2 * a);
-		return HitInfo(t, ray.getPoint(t), transformHitNormal(ray.getPoint(t)),mtrl);
+		return HitInfo(t, ray.getPoint(t), ray.getPoint(t),mtrl);
 
 	} else if (discr > 0) {
 
@@ -27,10 +27,10 @@ HitInfo Sphere::intersection(const Ray & ray) {
 
 		if (t2 > 0) {
 
-			return HitInfo(t2, ray.getPoint(t2), transformHitNormal(ray.getPoint(t2)), mtrl);
+			return HitInfo(t2, ray.getPoint(t2), ray.getPoint(t2), mtrl);
 		} else {
 			if (t1 > 0) {
-				return HitInfo(t1, ray.getPoint(t1), transformHitNormal(ray.getPoint(t1)), mtrl);
+				return HitInfo(t1, ray.getPoint(t1), ray.getPoint(t1), mtrl);
 			} else {
 				return HitInfo();
 			}
