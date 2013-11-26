@@ -8,6 +8,7 @@
 #include "Renderer.h"
 #include <string>
 #include <cstdlib>
+#include "RayTracerFactory.h"
 
 Renderer::Renderer(const Camera * const camera, const Scene & scene,
 		AppConfiguration & appCfg) :
@@ -15,7 +16,7 @@ Renderer::Renderer(const Camera * const camera, const Scene & scene,
 
 	nCols = std::atoi(appCfg["image.nCols"].c_str());
 	nRows = std::atoi(appCfg["image.nRows"].c_str());
-	rayTracer = new RayTracer(scene);
+    rayTracer = RayTracerFactory::createRayTracer(scene, appCfg);
 }
 
 Renderer::~Renderer() {

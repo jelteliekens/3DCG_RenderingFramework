@@ -3,13 +3,13 @@
 
 #include "Scene.h"
 #include "Camera.h"
-#include "RayTracer.h"
+#include "ARayTracer.h"
 
 class Renderer {
 
 	const Scene scene;
 	const Camera * const camera;
-	RayTracer* rayTracer;
+	ARayTracer* rayTracer;
 	int nRows, nCols;
 
 public:
