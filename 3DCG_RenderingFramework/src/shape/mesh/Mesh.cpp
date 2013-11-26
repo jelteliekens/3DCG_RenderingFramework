@@ -10,6 +10,7 @@
 
 Mesh::Mesh(const std::string & filename){
 	readFile(filename);
+    makeGenBoxExtent();
 }
 
 void Mesh::readFile(const std::string & filename){
@@ -53,25 +54,49 @@ void Mesh::readFile(const std::string & filename){
         
         faces.push_back(face);
     }
-    
 }
 
 
 HitInfo Mesh::intersection(const Ray & ray){
-    
+    HitInfo bestHitInfo(DBL_MAX);
+
     Ray invRay = ray.getInvTransfoRay(getTransfo().getInvMat());
     
-	HitInfo bestHitInfo(DBL_MAX);
-	for(std::vector<IFace*>::iterator it = faces.begin(); it != faces.end(); ++it) {
-		HitInfo hitInfo = (*it)->intersection(invRay);
-		if(hitInfo.getT() < bestHitInfo.getT()){
-			bestHitInfo = hitInfo;
-		}
-	}
+    if (genBoxExtent.hit(invRay)) {
     
-	bestHitInfo.setHitMaterial(Material(mtrl));
-    bestHitInfo.setHitNormal(transformHitNormal(bestHitInfo.getHitNormal()));
-    bestHitInfo.setHitPoint(ray.getPoint(bestHitInfo.getT()));
+        for(std::vector<IFace*>::iterator it = faces.begin(); it != faces.end(); ++it) {
+            HitInfo hitInfo = (*it)->intersection(invRay);
+            if(hitInfo.getT() < bestHitInfo.getT()){
+                bestHitInfo = hitInfo;
+            }
+        }
+    
+        bestHitInfo.setHitMaterial(Material(mtrl));
+        bestHitInfo.setHitNormal(transformHitNormal(bestHitInfo.getHitNormal()));
+        bestHitInfo.setHitPoint(ray.getPoint(bestHitInfo.getT()));
+    }
     
 	return bestHitInfo;
+}
+
+void Mesh::makeGenBoxExtent() {
+    double left, top, right, bottom, front, back;
+    
+    left = right = verts[0].x;
+    top = bottom = verts[0].y;
+    front = back = verts[0].z;
+
+    for (std::vector<Point>::const_iterator it = verts.begin(); it!= verts.end(); it++) {
+        Point p = *it;
+        if (p.x < left) left = p.x;
+        if (p.x > right) right = p.x;
+        if (p.y < bottom) bottom = p.y;
+        if (p.y > top) top = p.y;
+        if (p.z < back) back = p.z;
+        if (p.z > front) front = p.z;
+    }
+    
+    //std::cout << left << " " << right  << " " << top  << " " << bottom  << " " << front  << " " << back << std::endl;
+    
+    genBoxExtent = BoxExtent(left, right, top, bottom, front, back);
 }

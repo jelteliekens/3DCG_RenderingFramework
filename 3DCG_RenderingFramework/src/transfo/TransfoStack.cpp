@@ -9,18 +9,8 @@
 #include "TransfoStack.h"
 
 void TransfoStack::push() {
-    std::cout << stack.size() << std::endl;
-    std::cout << stack.top().getMat() << std::endl;
-    
     Transfo copy(stack.top());
-    
-    std::cout << copy.getMat() << std::endl;
-
     stack.push(copy);
-    
-    std::cout << stack.size() << std::endl;
-    std::cout << stack.top().getMat() << std::endl;
-
 }
 
 void TransfoStack::transform(const Transfo & transfo) {

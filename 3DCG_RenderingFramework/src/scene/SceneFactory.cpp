@@ -8,6 +8,7 @@
 #include "RotateTransfo.h"
 #include "TransfoStack.h"
 #include "Transfo.h"
+#include "Square.h"
 #include <iostream>
 
 Scene SceneFactory::createScene(const std::string & filename){
@@ -105,6 +106,8 @@ Shape * SceneFactory::createShape(std::ifstream & inf, const std::string & key, 
 	Shape * shape;
 	if(key.compare("sphere")==0){
 		shape = new Sphere;
+    } else if(key.compare("square")==0){
+		shape = new Square;
 	} else if(key.compare("mesh")==0){
         std::string path;
         inf >> path;
