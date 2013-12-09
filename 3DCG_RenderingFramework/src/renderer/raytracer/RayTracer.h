@@ -8,15 +8,13 @@
 #include "HitInfo.h"
 
 class RayTracer: public ARayTracer {
-private:
-
-	double calcComponent(double light, double drc, double arc, Vector & s, Vector & m);
-
 public:
 
 	RayTracer(const Scene & scene):ARayTracer(scene){ }
 
 	virtual ~RayTracer(){ }
+    
+protected:
 
 	virtual Colour shadeHit(const Ray & ray, const HitInfo & hitInfo);
 };

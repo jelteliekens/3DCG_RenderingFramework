@@ -26,13 +26,13 @@ public:
 
 	friend Vector operator+(const Vector & v1, const Vector & v2);
 
-	double dot(const Vector & v);
+	double dot(const Vector & v) const;
 
-	Vector cross(const Vector & v);
+	Vector cross(const Vector & v) const;
 
 	void normalize();
     
-    double length();
+    double length() const;
     
     friend std::ostream& operator<<(std::ostream & out, const Vector& vector);
 

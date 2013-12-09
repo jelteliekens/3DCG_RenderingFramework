@@ -38,6 +38,8 @@
 		EFB3CDBD182A37160044FD75 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB3CDBC182A37160044FD75 /* Ray.cpp */; };
 		EFB3CDC0182A5D100044FD75 /* TranslateTransfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB3CDBE182A5D100044FD75 /* TranslateTransfo.cpp */; };
 		EFB3CDC3182A5E7E0044FD75 /* RotateTransfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFB3CDC1182A5E7E0044FD75 /* RotateTransfo.cpp */; };
+		EFD7295A1847AD98005B4DED /* RayTracerWithShadow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFD729581847AD98005B4DED /* RayTracerWithShadow.cpp */; };
+		EFD7295D18480070005B4DED /* RayTracerWithReflection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EFD7295B18480070005B4DED /* RayTracerWithReflection.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +64,8 @@
 		EF2F498918292CAC0021081E /* Transfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transfo.h; sourceTree = "<group>"; };
 		EF5FF87A183229F6007AEAD4 /* TransfoStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransfoStack.cpp; sourceTree = "<group>"; };
 		EF5FF87B183229F6007AEAD4 /* TransfoStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransfoStack.h; sourceTree = "<group>"; };
+		EF6A79C1184DD3C4006EAC5D /* app5.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = app5.cfg; sourceTree = "<group>"; };
+		EF6A79C2184DD3CB006EAC5D /* simpleScene2.sdl */ = {isa = PBXFileReference; lastKnownFileType = text; path = simpleScene2.sdl; sourceTree = "<group>"; };
 		EF781537182817F000244232 /* 3DCG_RenderingFramework */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 3DCG_RenderingFramework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF78154918281AF300244232 /* app1.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app1.cfg; sourceTree = "<group>"; };
 		EF78154A18281AF300244232 /* app2.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = app2.cfg; sourceTree = "<group>"; };
@@ -130,6 +134,10 @@
 		EFB3CDC1182A5E7E0044FD75 /* RotateTransfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RotateTransfo.cpp; sourceTree = "<group>"; };
 		EFB3CDC2182A5E7E0044FD75 /* RotateTransfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateTransfo.h; sourceTree = "<group>"; };
 		EFD03269183BA21500094163 /* spheres1.sdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = spheres1.sdl; sourceTree = "<group>"; };
+		EFD729581847AD98005B4DED /* RayTracerWithShadow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RayTracerWithShadow.cpp; sourceTree = "<group>"; };
+		EFD729591847AD98005B4DED /* RayTracerWithShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayTracerWithShadow.h; sourceTree = "<group>"; };
+		EFD7295B18480070005B4DED /* RayTracerWithReflection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RayTracerWithReflection.cpp; sourceTree = "<group>"; };
+		EFD7295C18480070005B4DED /* RayTracerWithReflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayTracerWithReflection.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +213,7 @@
 				EF78154A18281AF300244232 /* app2.cfg */,
 				EF78154B18281AF300244232 /* app3.cfg */,
 				EF83F12E1844AEF700480E78 /* app4.cfg */,
+				EF6A79C1184DD3C4006EAC5D /* app5.cfg */,
 			);
 			path = cfg;
 			sourceTree = "<group>";
@@ -223,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				EF83F12D1844AEC700480E78 /* simpleScene.sdl */,
+				EF6A79C2184DD3CB006EAC5D /* simpleScene2.sdl */,
 				EF78155018281AF300244232 /* cylinder.sdl */,
 				EF78155118281AF300244232 /* genericSphere.sdl */,
 				EF78155218281AF300244232 /* tetrahedron.sdl */,
@@ -280,6 +290,10 @@
 				EF78156018281AF300244232 /* ARayTracer.h */,
 				EF78156118281AF300244232 /* RayTracer.cpp */,
 				EF78156218281AF300244232 /* RayTracer.h */,
+				EFD729581847AD98005B4DED /* RayTracerWithShadow.cpp */,
+				EFD729591847AD98005B4DED /* RayTracerWithShadow.h */,
+				EFD7295B18480070005B4DED /* RayTracerWithReflection.cpp */,
+				EFD7295C18480070005B4DED /* RayTracerWithReflection.h */,
 			);
 			path = raytracer;
 			sourceTree = "<group>";
@@ -415,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFB3CDC0182A5D100044FD75 /* TranslateTransfo.cpp in Sources */,
+				EFD7295D18480070005B4DED /* RayTracerWithReflection.cpp in Sources */,
 				EF78159418281AF300244232 /* Quaternion.cpp in Sources */,
 				EF78158E18281AF300244232 /* AFace.cpp in Sources */,
 				EFB3CDBD182A37160044FD75 /* Ray.cpp in Sources */,
@@ -439,6 +454,7 @@
 				EF78158618281AF300244232 /* Camera.cpp in Sources */,
 				EF78159518281AF300244232 /* Vector.cpp in Sources */,
 				EFB3CDBB182A2A210044FD75 /* ScaleTransfo.cpp in Sources */,
+				EFD7295A1847AD98005B4DED /* RayTracerWithShadow.cpp in Sources */,
 				EF8C2DE0183B5AB700468D3D /* BoxExtent.cpp in Sources */,
 				EF78158D18281AF300244232 /* Material.cpp in Sources */,
 				EF78159218281AF300244232 /* Colour.cpp in Sources */,

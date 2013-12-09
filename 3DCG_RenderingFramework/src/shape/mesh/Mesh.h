@@ -20,6 +20,7 @@ class Mesh: public Shape {
 public:
 	Mesh(const std::string & filename);
 	virtual HitInfo intersection(const Ray & ray);
+    virtual bool hit(const Ray & ray);
 
 private:
 	void readFile(const std::string & filename);

@@ -9,6 +9,7 @@ class IRaytraceable {
 public:
 
 	virtual HitInfo intersection(const Ray & ray)=0;
+    virtual bool hit(const Ray & ray)=0;
 	virtual ~IRaytraceable(){ };
 };
 

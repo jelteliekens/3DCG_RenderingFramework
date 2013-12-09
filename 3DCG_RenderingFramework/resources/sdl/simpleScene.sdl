@@ -4,11 +4,13 @@ ambient 0.08 0 0.05
 diffuse 1 0.1 0.4
 push 
 rotate -90 1 0 0 
-scale 25 25 1 
+scale 25 25 1
+reflectivity 0.7
 square
 pop
 ambient 0.1 0.1 0.2
 diffuse 0.3 0.3 1
 translate 0 6 0
 scale 4 4 4
+reflectivity 0.1
 sphere

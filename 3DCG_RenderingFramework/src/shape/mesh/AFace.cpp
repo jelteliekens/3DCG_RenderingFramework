@@ -8,9 +8,7 @@ HitInfo AFace::intersection(const Ray & ray){
 	Vector m = getFacePlaneNormal();
     
 	if (std::abs(m.dot(ray.getDir())) < 0.0000001) {
-        
 		return HitInfo();
-        
 	} else {
         
 		double thit = m.dot(Vector(ray.getStart(), point)) / m.dot(ray.getDir());
@@ -25,7 +23,6 @@ HitInfo AFace::intersection(const Ray & ray){
 				Vector v1(getVertex(i%3), getVertex((i+1)%3));
 				Vector v2(getVertex(i%3), ray.getPoint(thit));
 				Vector v3 = v1.cross(v2);
-                
 				ok = v3.dot(m) > 0;
             }
             
@@ -35,7 +32,29 @@ HitInfo AFace::intersection(const Ray & ray){
 				return HitInfo();
 			}
 		}
-        
 	}
+}
+
+bool AFace::hit(const Ray & ray) {
+    Point point = getVertex(0);
+	Vector m = getFacePlaneNormal();
     
+    
+    if (std::abs(m.dot(ray.getDir())) > 0.0000001) {
+        double thit = m.dot(Vector(ray.getStart(), point)) / m.dot(ray.getDir());
+        
+		if (thit > 0 && thit < 1) {
+            
+			for (int i = 0; i < 3; i++) {
+				Vector v1(getVertex(i%3), getVertex((i+1)%3));
+				Vector v2(getVertex(i%3), ray.getPoint(thit));
+				Vector v3 = v1.cross(v2);
+                
+                if (v3.dot(m) > 0) return true;
+            }
+            
+		}
+    }
+    
+    return false;
 }

@@ -14,7 +14,7 @@ protected:
     
 public:
 
-	Shape(){ }
+	Shape(){}
 
 	const Material& getMaterial() const { return mtrl; }
 

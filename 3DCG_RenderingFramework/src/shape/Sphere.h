@@ -8,6 +8,7 @@ class Sphere: public Shape {
 public:
 
 	virtual HitInfo intersection(const Ray & ray);
+    virtual bool hit(const Ray & ray);
 
 };
 

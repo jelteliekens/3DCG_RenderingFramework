@@ -73,6 +73,10 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "resources/cfg/app4.cfg"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "resources/cfg/app5.cfg"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

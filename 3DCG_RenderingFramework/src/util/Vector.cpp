@@ -28,23 +28,23 @@ Vector operator+(const Vector & v1, const Vector & v2) {
 	return Vector(v1.x +  v2.x, v1.y + v2.y, v1.z + v2.z);
 }
 
-double Vector::dot(const Vector & v) {
+double Vector::dot(const Vector & v) const {
 	return (x * v.x) + (y * v.y) + (z * v.z);
 }
 
-Vector Vector::cross(const Vector & v) {
+Vector Vector::cross(const Vector & v) const {
 	return Vector((y * v.z - z * v.y), (z * v.x - x * v.z), (x * v.y - y * v.x));
 }
 
 void Vector::normalize() {
-	double length = sqrt(x*x + y*y + z*z);
+	double length = std::sqrt(x*x + y*y + z*z);
 	x = x / length;
 	y = y / length;
 	z = z / length;
 }
 
-double Vector::length() {
-    return sqrt(x*x + y*y + z*z);
+double Vector::length() const {
+    return std::sqrt(x*x + y*y + z*z);
 }
 
 std::ostream& operator<<(std::ostream & out, const Vector& vector) {

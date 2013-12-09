@@ -10,6 +10,9 @@ protected:
 	Scene scene;
 
 	virtual Colour shadeHit(const Ray & ray, const HitInfo & hitInfo) = 0;
+    
+    Colour addDiffuse(const Light & light, const Colour &drc, const Vector & s, const Vector & m);
+    Colour addAmbient(const Light & light, const Colour &arc);
 
 public:
 

@@ -79,6 +79,17 @@ HitInfo Mesh::intersection(const Ray & ray){
 	return bestHitInfo;
 }
 
+bool Mesh::hit(const Ray & ray) {
+    
+    Ray invRay = ray.getInvTransfoRay(getTransfo().getInvMat());
+    
+    for(std::vector<IFace*>::iterator it = faces.begin(); it != faces.end(); ++it) {
+        if (!(*it)->hit(invRay)) return false;
+    }
+    
+	return true;
+}
+
 void Mesh::makeGenBoxExtent() {
     double left, top, right, bottom, front, back;
     
@@ -95,8 +106,6 @@ void Mesh::makeGenBoxExtent() {
         if (p.z < back) back = p.z;
         if (p.z > front) front = p.z;
     }
-    
-    //std::cout << left << " " << right  << " " << top  << " " << bottom  << " " << front  << " " << back << std::endl;
     
     genBoxExtent = BoxExtent(left, right, top, bottom, front, back);
 }

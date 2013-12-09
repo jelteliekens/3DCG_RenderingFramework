@@ -71,6 +71,11 @@ bool SceneFactory::processMaterial(std::ifstream & inf, const std::string & key,
 		inf >> r >> g >> b;
 		currMtrl.setAmbient(Colour(r,g,b));
 		return true;
+	} else if (key.compare("reflectivity")==0) {
+		double reflectivity;
+		inf >> reflectivity;
+		currMtrl.setReflectivity(reflectivity);
+		return true;
 	}
 	return false;
 }

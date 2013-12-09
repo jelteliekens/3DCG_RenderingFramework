@@ -20,5 +20,23 @@ HitInfo Square::intersection(const Ray & ray){
 	return HitInfo(t, ray.getPoint(t),normal, mtrl);
 }
 
+bool Square::hit(const Ray &ray) {
+    Ray invRay = ray.getInvTransfoRay(transfo.getInvMat());
+    
+    if(std::abs(invRay.getDir().z)<0.00001){
+		return false;
+	}
+	double t=-invRay.getStart().z/invRay.getDir().z;
+	if(t<=0.0){
+		return false;
+	}
+	Point hitPoint = invRay.getPoint(t);
+	if (hitPoint.x > 1.0 || hitPoint.x < -1.0 || hitPoint.y > 1.0 || hitPoint.y < -1.0){
+		return false;
+	}
+    
+	return t > 0 && t < 1;
+}
+
 
 

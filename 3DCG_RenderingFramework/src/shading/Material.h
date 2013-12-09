@@ -2,11 +2,13 @@
 #define MATERIAL_H_
 
 #include "Colour.h"
+#include <iostream>
 
 class Material {
 
 	Colour diffuse;
 	Colour ambient;
+    double reflectivity;
 
 public:
 
@@ -23,7 +25,10 @@ public:
 	const Colour & getAmbient() const { return ambient; }
 
 	void setAmbient(const Colour & ambient) { this->ambient = ambient; }
-
+    
+    const double getReflectivity() const { return reflectivity; }
+    
+    void setReflectivity(double reflectivity) { this->reflectivity = reflectivity; }
 };
 
 #endif /* MATERIAL_H_ */

@@ -8,19 +8,25 @@
 
 #include "RayTracerFactory.h"
 #include "RayTracer.h"
+#include "RayTracerWithShadow.h"
+#include "RayTracerWithReflection.h"
 
 ARayTracer* RayTracerFactory::createRayTracer(const Scene & scene,  AppConfiguration & appCfg) {
     
-    ARayTracer * rayTracer;
+    ARayTracer * rayTracer = 0;
     
     std::string mode = appCfg["raytracer.mode"];
-    std::cout << mode;
     
     if (mode.compare("basic")==0) {
         rayTracer = new RayTracer(scene);
+    } else if (mode.compare("shadow")==0) {
+        rayTracer = new RayTracerWithShadow(scene);
+    } else if (mode.compare("reflection")==0) {
+        rayTracer = new RayTracerWithReflection(scene, appCfg);
     } else {
         rayTracer = new RayTracer(scene);
     }
+
 
     return rayTracer;
 }
